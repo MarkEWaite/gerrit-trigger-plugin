@@ -64,6 +64,7 @@
         <mockito.version>1.10.19</mockito.version>
         <workflow.version>1.14</workflow.version>
         <workflow.version.test>1.14.1-beta-1</workflow.version.test>
+        <enforcer.skip>true</enforcer.skip>
     </properties>
 
     <dependencies>
