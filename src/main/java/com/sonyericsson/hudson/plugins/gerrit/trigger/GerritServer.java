@@ -1329,7 +1329,7 @@ public class GerritServer implements Describable<GerritServer>, Action {
             Integer.parseInt(value);
             return FormValidation.ok();
         } catch (NumberFormatException e) {
-            return FormValidation.error(hudson.model.Messages.Hudson_NotANumber());
+            return FormValidation.error("not a number");
         }
     }
 
@@ -1349,7 +1349,7 @@ public class GerritServer implements Describable<GerritServer>, Action {
                 Integer.parseInt(value);
                 return FormValidation.ok();
             } catch (NumberFormatException e) {
-                return FormValidation.error(hudson.model.Messages.Hudson_NotANumber());
+                return FormValidation.error("not a number");
             }
         }
     }
