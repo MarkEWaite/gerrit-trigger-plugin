@@ -185,25 +185,6 @@ public class GerritTriggerBuildChooser extends BuildChooser {
         }
     }
 
-    /**
-     * Call release method on walk.  JGit 3 uses release(), JGit 4 uses close() to
-     * release resources.
-     *
-     * This method should be removed once the code depends on git client 2.0.0.
-     * @param walk object whose close or release method will be called
-     * @throws IOException on IO error
-     */
-    private static void releaseOrClose(RevWalk walk) throws IOException {
-        if (walk == null) {
-            return;
-        }
-        try {
-            walk.release(); // JGit 3
-        } catch (NoSuchMethodError noMethod) {
-            closeByReflection(walk);
-        }
-    }
-
     //CS IGNORE RedundantThrows FOR NEXT 30 LINES. REASON: Informative, and could happen.
     /**
      * Gets the top parent of the given revision.
@@ -236,7 +217,7 @@ public class GerritTriggerBuildChooser extends BuildChooser {
                 } catch (Exception e) {
                     throw new GitException("Failed to find parent id. ", e);
                 } finally {
-                    releaseOrClose(walk);
+                    walk.close();
                 }
                 return result;
             }
