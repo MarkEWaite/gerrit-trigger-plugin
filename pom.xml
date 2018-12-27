@@ -53,17 +53,16 @@
     </developers>
 
     <properties>
-        <jenkins.version>1.609.3</jenkins.version>
-        <!--<jenkins.version>2.5-SNAPSHOT</jenkins.version>-->
-        <java.level>6</java.level>
+        <jenkins.version>2.60.3</jenkins.version>
+        <java.level>8</java.level>
         <no-test-jar>false</no-test-jar>
         <findbugs.failOnError>false</findbugs.failOnError>
         <concurrency>1C</concurrency>
         <powermock.version>1.6.2</powermock.version>
         <checkstyle.version>2.13</checkstyle.version>
         <mockito.version>1.10.19</mockito.version>
-        <workflow.version>1.14</workflow.version>
-        <workflow.version.test>1.14.1-beta-1</workflow.version.test>
+        <workflow.version>2.17</workflow.version>
+        <workflow.version.test>2.3</workflow.version.test>
         <enforcer.skip>true</enforcer.skip>
     </properties>
 
@@ -84,7 +83,7 @@
         <dependency>
             <groupId>org.jenkins-ci.plugins</groupId>
             <artifactId>structs</artifactId>
-            <version>1.1</version>
+            <version>1.10</version>
         </dependency>
         <dependency>
             <groupId>org.jenkins-ci.plugins</groupId>
@@ -99,15 +98,15 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>org.jenkins-ci.plugins</groupId>
-            <artifactId>matrix-project</artifactId>
-            <version>1.12</version>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
             <groupId>com.sonyericsson.hudson.plugins.rebuild</groupId>
             <artifactId>rebuild</artifactId>
             <version>1.25</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.jenkins-ci.plugins</groupId>
+            <artifactId>matrix-project</artifactId>
+            <version>1.13</version>
             <optional>true</optional>
         </dependency>
         <dependency>
@@ -119,7 +118,7 @@
         <dependency>
             <groupId>org.jenkins-ci.plugins</groupId>
             <artifactId>support-core</artifactId>
-            <version>2.31</version>
+            <version>2.32</version>
             <optional>true</optional>
         </dependency>
         <dependency>
@@ -130,7 +129,7 @@
         <dependency>
             <groupId>org.jenkins-ci.plugins</groupId>
             <artifactId>junit</artifactId>
-            <version>1.12</version>
+            <version>1.20</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -164,7 +163,6 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.11</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -206,6 +204,19 @@
             <groupId>com.github.tomakehurst</groupId>
             <artifactId>wiremock</artifactId>
             <version>1.51</version>
+            <scope>test</scope>
+        </dependency>
+	<!-- https://mvnrepository.com/artifact/net.sourceforge.htmlunit/htmlunit -->
+	<dependency>
+	    <groupId>net.sourceforge.htmlunit</groupId>
+	    <artifactId>htmlunit</artifactId>
+	    <version>2.31</version>
+            <scope>test</scope>
+	</dependency>
+        <dependency>
+            <groupId>org.jenkins-ci.plugins</groupId>
+            <artifactId>script-security</artifactId>
+            <version>1.44</version>
             <scope>test</scope>
         </dependency>
         <dependency>
